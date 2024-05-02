@@ -1,0 +1,49 @@
+import styled, { css } from "styled-components";
+
+const sizes: any = {
+  small: css`
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+  `,
+  medium: css`
+    font-size: 1.4rem;
+    padding: 1.2rem 1.6rem;
+    font-weight: 500;
+  `,
+  large: css`
+    font-size: 1.6rem;
+    padding: 1.2rem 2.4rem;
+    font-weight: 500;
+  `,
+};
+
+interface Props {
+  $size: string;
+  $color: string;
+  $border: any;
+}
+
+const Button = styled.button<Props>`
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
+
+  background-color: var(${(props) => props.$color});
+  border: var(${(props) => props.$border});
+
+  font-size: 1.4rem;
+  padding: 1.2rem 1.6rem;
+  font-weight: 500;
+
+  ${(props) => sizes[props.$size]};
+`;
+
+Button.defaultProps = {
+  $color: "--color-green-main",
+  $size: "medium",
+  $border: "--border-none",
+};
+
+export default Button;
