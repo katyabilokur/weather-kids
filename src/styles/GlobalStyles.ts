@@ -22,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
 
 --color-orange-main: #FFA033;
 --color-yellow-main: #FFE15C;
+--color-yellow-main-dark: #fad014;
 --color-green-main: #C2CC00;
 --color-green-main-light: #f9fad9;
 --color-blue-main: #1AC8ED; //00B9E8

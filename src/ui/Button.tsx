@@ -23,6 +23,7 @@ const sizes: any = {
 interface Props {
   $size: string;
   $color: string;
+  $colorHover: string;
   $border: any;
 }
 
@@ -38,10 +39,15 @@ const Button = styled.button<Props>`
   font-weight: 500;
 
   ${(props) => sizes[props.$size]};
+
+  &:hover {
+    background-color: var(${(props) => props.$colorHover});
+  }
 `;
 
 Button.defaultProps = {
   $color: "--color-green-main",
+  $colorHover: "--color-green-main-dark",
   $size: "medium",
   $border: "--border-none",
 };

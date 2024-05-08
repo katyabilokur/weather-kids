@@ -1,9 +1,5 @@
 import { useState } from "react";
-
-interface Coordinates {
-  lat: number;
-  lng: number;
-}
+import Coordinates from "../interfaces/Coordinates";
 
 export function useGeolocation(defaultPosition = null) {
   const [isLoading, setIsLoading] = useState(false);
@@ -22,6 +18,7 @@ export function useGeolocation(defaultPosition = null) {
           lng: pos.coords.longitude,
         });
         setIsLoading(false);
+        console.log(pos);
       },
       (error) => {
         setError(error.message);
