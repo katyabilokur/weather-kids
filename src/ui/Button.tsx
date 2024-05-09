@@ -43,6 +43,11 @@ const Button = styled.button<Props>`
   &:hover {
     background-color: var(${(props) => props.$colorHover});
   }
+
+  &:disabled {
+    background-color: var(--color-grey-200);
+    color: var(--color-grey-500);
+  }
 `;
 
 Button.defaultProps = {

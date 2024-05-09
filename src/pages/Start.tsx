@@ -10,7 +10,12 @@ import Button from "../ui/Button";
 import { styled } from "styled-components";
 
 import Coordinates from "../interfaces/Coordinates";
-import { getLocation } from "../helpers/locationHelpers";
+import {
+  getCoordinatesLocalStorage,
+  getLocation,
+  getLocationLocalStorage,
+  localLocationDataExists,
+} from "../helpers/locationHelpers";
 
 const StyledSearchContainer = styled.div`
   display: flex;
@@ -18,45 +23,42 @@ const StyledSearchContainer = styled.div`
 `;
 
 function Start() {
-  const [coordinates, setCooordinates] = useState<Coordinates>({
-    lat: -33.9651281,
-    lng: 150.8491261,
-  });
-  const [location, setLocation] = useState("");
+  const [coordinates, setCooordinates] = useState<Coordinates>();
+  const [location, setLocation] = useState<string>("");
+  const [saveLocation, setSaveLocation] = useState(false);
   const { position, getPosition } = useGeolocation();
 
   //On loading a page for the first time
   useEffect(() => {
-    //1 Check local storage. If it exists, take location and coordinates from there
-
-    //2a. If no local storage, ask to use current location and get data from there.
-    getPosition();
-
-    //2b. Get location for the first time
-    getLocation(coordinates, setLocation);
-    console.log(location);
-
-    //2c. Save a new location to local storage
-  }, [location]);
+    //1a Check local storage. If it exists, take location and coordinates from there
+    if (localLocationDataExists()) {
+      setCooordinates(getCoordinatesLocalStorage());
+      setLocation(getLocationLocalStorage());
+    } else {
+      //2. If no local storage, ask to use current location and get data from there.
+      getPosition(true);
+    }
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem("weatherLocation", JSON.stringify(position));
+    if (position) {
+      setCooordinates(() => position as Coordinates);
+      getLocation(position as Coordinates, setLocation, true);
+    }
   }, [position]);
 
   // function handleAddressSelecion(e: React.ChangeEvent<HTMLInputElement>) {
   function handleAddressSelecion(value: any) {
-    console.log(value);
-
-    if (value != null) {
+    if (value !== null) {
+      setSaveLocation(true);
       setCooordinates(value.geometry.coordinates);
       setLocation(
         `${value.properties.address_line1}, ${value.properties.address_line2}`
       );
     }
-
-    console.log(coordinates);
-    console.log(location);
   }
+
+  function handleSaveLocation() {}
 
   return (
     <>
@@ -70,6 +72,8 @@ function Start() {
         </GeoapifyContext>
         {/* Add button to save to prefered location. If clicked, save a new location to a local storage. Otherwise just use it for next step calculation */}
         <Button
+          disabled={!saveLocation}
+          onClick={handleSaveLocation}
           $size="small"
           $color="--color-yellow-main"
           $border="--border-none"
