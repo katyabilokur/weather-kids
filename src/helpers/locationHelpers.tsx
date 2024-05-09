@@ -26,7 +26,7 @@ export function saveCoordinatesLocalStorage(value: Coordinates) {
   saveToLocalStorage("weatherLocationCoordinates", value);
 }
 
-function saveLocationLocalStorage(value: string) {
+export function saveLocationLocalStorage(value: string) {
   saveToLocalStorage("weatherLocation", value);
 }
 

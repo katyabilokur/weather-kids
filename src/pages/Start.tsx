@@ -15,7 +15,10 @@ import {
   getLocation,
   getLocationLocalStorage,
   localLocationDataExists,
+  saveCoordinatesLocalStorage,
+  saveLocationLocalStorage,
 } from "../helpers/locationHelpers";
+import { toast } from "react-hot-toast";
 
 const StyledSearchContainer = styled.div`
   display: flex;
@@ -51,14 +54,27 @@ function Start() {
   function handleAddressSelecion(value: any) {
     if (value !== null) {
       setSaveLocation(true);
-      setCooordinates(value.geometry.coordinates);
+      const newCoordinates = {
+        lat: value.geometry.coordinates[0],
+        lng: value.geometry.coordinates[1],
+      };
+      setCooordinates(newCoordinates);
       setLocation(
         `${value.properties.address_line1}, ${value.properties.address_line2}`
       );
     }
   }
 
-  function handleSaveLocation() {}
+  function handleSaveLocation() {
+    saveCoordinatesLocalStorage(coordinates as Coordinates);
+    saveLocationLocalStorage(location);
+
+    toast.success("Preferred location has been saved locally");
+
+    setSaveLocation(false);
+  }
+  console.log(coordinates);
+  console.log(location);
 
   return (
     <>
