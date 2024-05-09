@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Footer from "./Footer";
 
 const Main = styled.main`
-  background-color: var(--color-grey-100);
+  background-color: var(--color-grey-50);
   padding: 4rem 4.8rem 6.4rem;
   //overflow: hidden;
   /* margin: 0 auto; */

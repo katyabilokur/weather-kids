@@ -6,15 +6,15 @@ function Home() {
     <>
       <Heading as="h1">Dress for the weather</Heading>
       <NavLinkStyled
-        $color="--color-green-main-light"
-        $border="--color-green-main"
+        $color="--color-green-main"
+        $hover="--color-green-main-dark"
         to="/signin"
       >
         <span>Login</span>
       </NavLinkStyled>
       <NavLinkStyled
-        $color="--color-magenta-main-light"
-        $border="--color-magenta-main"
+        $color="--color-blue-main"
+        $hover="--color-blue-main-dark"
         to="/start"
       >
         <span>Guest</span>

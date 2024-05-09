@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 interface Props {
   $color: string;
-  $border: string;
+  $hover: string;
 }
 
 const NavLinkStyled = styled(NavLink)<Props>`
@@ -16,7 +16,7 @@ const NavLinkStyled = styled(NavLink)<Props>`
 
     color: var(--color-grey-600);
     background-color: var(${(props) => props.$color});
-    border: 2px solid var(${(props) => props.$border});
+    border: 2px solid var(${(props) => props.$color});
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-sm);
 
@@ -37,7 +37,8 @@ const NavLinkStyled = styled(NavLink)<Props>`
   &.active:link,
   &.active:visited {
     color: var(--color-grey-800);
-    background-color: var(${(props) => props.$border});
+    background-color: var(${(props) => props.$hover});
+    border-color: var(${(props) => props.$hover});
 
     color: var(--color-grey-50);
     font-size: 2.2rem;
@@ -46,7 +47,7 @@ const NavLinkStyled = styled(NavLink)<Props>`
 
 NavLinkStyled.defaultProps = {
   $color: "--color-green-main-light",
-  $border: "--color-green-main",
+  $hover: "--color-green-main",
 };
 
 export default NavLinkStyled;

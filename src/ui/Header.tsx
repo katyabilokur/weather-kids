@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import LogoSvg from "../styles/icons/LogoSvg";
+import { useNavigate } from "react-router-dom";
 
 const StyledHeader = styled.header`
   background-color: var(--color-grey-600);
@@ -11,22 +12,13 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  svg {
-    position: relative;
-    z-index: 20;
-    height: 8rem;
-    width: 8rem;
-    fill: var(--color-grey-0);
-    // stroke: var(--color-magenta-main);
-    //  stroke-width: 2px;
-  }
 `;
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <StyledHeader>
-      <LogoSvg />
+      <LogoSvg onClickHandler={() => navigate("/home")} />
     </StyledHeader>
   );
 }

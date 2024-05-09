@@ -1,6 +1,28 @@
-function LogoSvg() {
+import { styled } from "styled-components";
+
+//TODO: random color on hover
+//check implementation idea here: https://medium.com/@msgold/styled-components-in-react-and-typescript-456843804b99
+
+const StyledSvg = styled.svg`
+  position: relative;
+  z-index: 20;
+  height: 8rem;
+  width: 8rem;
+  fill: var(--color-grey-0);
+
+  :hover {
+    fill: var(--color-green-main);
+    cursor: pointer;
+  }
+`;
+
+interface LogoProps {
+  onClickHandler: React.MouseEventHandler<SVGSVGElement>;
+}
+
+function LogoSvg({ onClickHandler }: LogoProps) {
   return (
-    <svg viewBox="0 0 100 100">
+    <StyledSvg onClick={onClickHandler} viewBox="0 0 100 100">
       <path
         d="
       M89.060364,26.908861 
@@ -19,7 +41,7 @@ function LogoSvg() {
         C79.327827,20.554119 84.033173,23.649885 89.060364,26.908861 
       z"
       />
-    </svg>
+    </StyledSvg>
   );
 }
 
