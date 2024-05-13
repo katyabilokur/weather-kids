@@ -19,6 +19,7 @@ import {
   saveLocationLocalStorage,
 } from "../helpers/locationHelpers";
 import { toast } from "react-hot-toast";
+import DateSelectionPanel from "../features/selection/DateSelectionPanel";
 
 const StyledSearchContainer = styled.div`
   display: flex;
@@ -30,6 +31,7 @@ function Start() {
   const [location, setLocation] = useState<string>("");
   const [saveLocation, setSaveLocation] = useState(false);
   const { position, getPosition } = useGeolocation();
+  const [date, setDate] = useState<Date>();
 
   //On loading a page for the first time
   useEffect(() => {
@@ -73,8 +75,14 @@ function Start() {
 
     setSaveLocation(false);
   }
+
+  function handleDateSelection(dateSelected: Date) {
+    setDate(dateSelected);
+  }
+
   console.log(coordinates);
   console.log(location);
+  if (date) console.log(date.toString());
 
   return (
     <>
@@ -100,6 +108,10 @@ function Start() {
       </StyledSearchContainer>
 
       {location && <Heading as="h4">How to dress up in {location}</Heading>}
+      {!location && (
+        <Heading as="h4">Please serach for a location first...</Heading>
+      )}
+      <DateSelectionPanel onDateSelect={handleDateSelection} />
     </>
   );
 }

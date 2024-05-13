@@ -22,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
 
 --color-orange-main: #FFA033;
 --color-yellow-main: #FFE15C;
+--color-yellow-main-light: #ffed9e;
 --color-yellow-main-dark: #fad014;
 --color-green-main: #C2CC00;
 --color-green-main-dark: #8a9100;
@@ -32,6 +33,8 @@ const GlobalStyles = createGlobalStyle`
   --color-red-light: #FFDCD8;
   --color-red-medium: #FE6F5E;
   --color-red-dark: #E02F1C;
+
+  --border-purple: 2px solid #7A0062;
 
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -133,6 +136,10 @@ svg {
   height: 3.2rem;
     width: 3.2rem;
 }
+
+.selected {
+    background-color: var(--color-yellow-main-light);
+  }
 `;
 
 export default GlobalStyles;
