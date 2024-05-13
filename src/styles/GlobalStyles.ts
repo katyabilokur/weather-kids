@@ -21,20 +21,25 @@ const GlobalStyles = createGlobalStyle`
 --color-magenta-main-light: #faf0f4;
 
 --color-orange-main: #FFA033;
+--color-orange-main-light:#ffe8cf;
 --color-yellow-main: #FFE15C;
 --color-yellow-main-light: #ffed9e;
 --color-yellow-main-dark: #fad014;
---color-green-main: #C2CC00;
---color-green-main-dark: #8a9100;
+--color-green-main: #d5e000;
+--color-green-main-dark: #C2CC0f;
 --color-green-main-light: #f9fad9;
 --color-blue-main: #1AC8ED; //00B9E8
+--color-blue-main-light: #ccf6ff;
 --color-blue-main-dark:#0d8fab;
 
   --color-red-light: #FFDCD8;
   --color-red-medium: #FE6F5E;
   --color-red-dark: #E02F1C;
 
-  --border-purple: 2px solid #7A0062;
+  --border-purple: 2px solid var(--color-purple-main);
+  --border-magenta: 2px solid var(--color-magenta-main);
+  --border-blue: 2px solid var(--color-blue-main);
+  --border-orange: 2px solid var(--color-orange-main);
 
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -138,6 +143,11 @@ svg {
 }
 
 .selected {
+    background-color: var(--color-yellow-main-light);
+  }
+
+  .selected-man,
+  .selected-woman {
     background-color: var(--color-yellow-main-light);
   }
 `;

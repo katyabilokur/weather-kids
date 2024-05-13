@@ -17,6 +17,12 @@ const sizes: any = {
     font-size: 1.8rem;
     padding: 1.2rem 2.4rem;
     font-weight: 500;
+    width: 14rem;
+  `,
+  huge: css`
+    font-size: 1.8rem;
+    padding: 3.2rem 1rem;
+    font-weight: 500;
   `,
 };
 

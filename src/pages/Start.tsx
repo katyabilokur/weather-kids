@@ -20,6 +20,7 @@ import {
 } from "../helpers/locationHelpers";
 import { toast } from "react-hot-toast";
 import DateSelectionPanel from "../features/selection/DateSelectionPanel";
+import GenderSelectionPanel from "../features/selection/GenderSelectionPanel";
 
 const StyledSearchContainer = styled.div`
   display: flex;
@@ -32,6 +33,7 @@ function Start() {
   const [saveLocation, setSaveLocation] = useState(false);
   const { position, getPosition } = useGeolocation();
   const [date, setDate] = useState<Date>();
+  const [gender, setGender] = useState<boolean>();
 
   //On loading a page for the first time
   useEffect(() => {
@@ -80,9 +82,21 @@ function Start() {
     setDate(dateSelected);
   }
 
-  console.log(coordinates);
-  console.log(location);
-  if (date) console.log(date.toString());
+  function handleGenderSelection(girl: boolean) {
+    setGender(girl);
+  }
+
+  function handleParamSelection() {
+    // console.log(coordinates);
+    // console.log(location);
+    // console.log(date);
+    // console.log(gender);
+
+    if (!location || gender === undefined || !date) {
+      toast("Please select all parameters: location, gender and date");
+    } else {
+    }
+  }
 
   return (
     <>
@@ -111,7 +125,17 @@ function Start() {
       {!location && (
         <Heading as="h4">Please serach for a location first...</Heading>
       )}
+      <GenderSelectionPanel onGenderSelection={handleGenderSelection} />
       <DateSelectionPanel onDateSelect={handleDateSelection} />
+      <Button
+        onClick={handleParamSelection}
+        $size="large"
+        $color="--color-green-main"
+        $border="--border-none"
+        $colorHover="--color-green-main-dark"
+      >
+        Check it
+      </Button>
     </>
   );
 }
