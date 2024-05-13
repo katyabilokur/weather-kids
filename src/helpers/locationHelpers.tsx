@@ -4,7 +4,7 @@ import { fetchLocation } from "../services/apiLocations";
 
 export async function getLocation(
   coordinates: Coordinates,
-  setter: any,
+  setter: (location: string) => void,
   save: boolean = false
 ) {
   const dataFetched = await fetchLocation(coordinates);
