@@ -12,13 +12,16 @@ import { toast } from "react-hot-toast";
 import DateSelectionPanel from "../features/selection/DateSelectionPanel";
 import GenderSelectionPanel from "../features/selection/GenderSelectionPanel";
 import LocationSearch from "../features/selection/LocationSearch";
+import { useSelection } from "../features/selection/SelectionContext";
 
 function Start() {
-  const [coordinates, setCooordinates] = useState<Coordinates>();
+  //const [coordinates, setCooordinates] = useState<Coordinates>();
 
   const { position, getPosition } = useGeolocation();
   const [date, setDate] = useState<Date>();
   const [gender, setGender] = useState<boolean>();
+
+  const { coordinates, setCooordinates } = useSelection();
 
   //On loading a page for the first time
   useEffect(() => {
@@ -33,7 +36,8 @@ function Start() {
 
   useEffect(() => {
     if (position) {
-      setCooordinates(() => position as Coordinates);
+      //setCooordinates(() => position as Coordinates);
+      setCooordinates(position as Coordinates);
       // getLocation(position as Coordinates, setLocation, true);
     }
   }, [position]);
@@ -47,16 +51,13 @@ function Start() {
   }
 
   function handleParamSelection() {
-    // console.log(coordinates);
-    // console.log(location);
-    // console.log(date);
-    // console.log(gender);
-
     if (!coordinates || gender === undefined || !date) {
       toast("Please select all parameters: location, gender and date");
     } else {
     }
   }
+
+  console.log(coordinates);
 
   return (
     <>
