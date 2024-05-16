@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../styles/SearchAddress.css";
 import { useGeolocation } from "../hooks/useGeolocation";
 import Button from "../ui/Button";
@@ -13,15 +13,22 @@ import DateSelectionPanel from "../features/selection/DateSelectionPanel";
 import GenderSelectionPanel from "../features/selection/GenderSelectionPanel";
 import LocationSearch from "../features/selection/LocationSearch";
 import { useSelection } from "../features/selection/SelectionContext";
+import { useNavigate } from "react-router-dom";
+// import StyledLink from "../ui/StyledLink";
 
 function Start() {
-  //const [coordinates, setCooordinates] = useState<Coordinates>();
-
   const { position, getPosition } = useGeolocation();
-  const [date, setDate] = useState<Date>();
-  const [gender, setGender] = useState<boolean>();
+  const navigate = useNavigate();
 
-  const { coordinates, setCooordinates } = useSelection();
+  const {
+    setLocation,
+    coordinates,
+    setCooordinates,
+    gender,
+    setGender,
+    date,
+    setDate,
+  } = useSelection();
 
   //On loading a page for the first time
   useEffect(() => {
@@ -36,9 +43,8 @@ function Start() {
 
   useEffect(() => {
     if (position) {
-      //setCooordinates(() => position as Coordinates);
       setCooordinates(position as Coordinates);
-      // getLocation(position as Coordinates, setLocation, true);
+      getLocation(position as Coordinates, setLocation, true);
     }
   }, [position]);
 
@@ -51,13 +57,15 @@ function Start() {
   }
 
   function handleParamSelection() {
-    if (!coordinates || gender === undefined || !date) {
+    console.log(coordinates);
+    console.log(gender);
+    console.log(date);
+    if (!coordinates || gender === null || !date) {
       toast("Please select all parameters: location, gender and date");
     } else {
+      navigate("/dressup");
     }
   }
-
-  console.log(coordinates);
 
   return (
     <>
@@ -73,6 +81,7 @@ function Start() {
       >
         Check it
       </Button>
+      {/* <StyledLink to="/dressup">Check it</StyledLink> */}
     </>
   );
 }

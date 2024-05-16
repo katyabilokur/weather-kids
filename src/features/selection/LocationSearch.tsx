@@ -15,6 +15,7 @@ import {
 } from "../../helpers/locationHelpers";
 import Coordinates from "../../interfaces/Coordinates";
 import { toast } from "react-hot-toast";
+import { useSelection } from "./SelectionContext";
 
 const StyledSearchContainer = styled.div`
   display: flex;
@@ -27,8 +28,9 @@ interface LocationSearchProps {
 
 function LocationSearch({ position }: LocationSearchProps) {
   const [saveLocation, setSaveLocation] = useState(false);
-  const [location, setLocation] = useState<string>("");
-  const [coordinates, setCooordinates] = useState<Coordinates>();
+
+  const { location, setLocation, coordinates, setCooordinates } =
+    useSelection();
 
   useEffect(() => {
     if (localLocationDataExists()) {

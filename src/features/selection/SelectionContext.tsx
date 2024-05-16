@@ -6,18 +6,24 @@ interface ProviderProps {
 }
 interface SelectionContextValue {
   location: string;
-  coordinates: Coordinates;
-  gender: boolean;
-  date: Date;
+  coordinates: Coordinates | null;
+  gender: boolean | null;
+  date: Date | null;
   setCooordinates: (value: Coordinates) => void;
+  setLocation: (value: string) => void;
+  setDate: (value: Date) => void;
+  setGender: (value: boolean) => void;
 }
 
 const inicialState = {
   location: "",
-  coordinates: { lat: 0, lng: 0 },
-  gender: false,
-  date: new Date(),
+  coordinates: null,
+  gender: null,
+  date: null,
   setCooordinates: () => {},
+  setLocation: () => {},
+  setDate: () => {},
+  setGender: () => {},
 };
 
 interface ActionReducerType {
@@ -37,8 +43,28 @@ function SelectionProvider({ children }: ProviderProps) {
     });
   }
 
+  function setLocation(value: string) {
+    dispatch({
+      type: "NEW_LOCATION",
+      payload: value,
+    });
+  }
+
+  function setDate(value: Date) {
+    dispatch({
+      type: "SET_DATE",
+      payload: value,
+    });
+  }
+
+  function setGender(value: boolean) {
+    dispatch({
+      type: "SET_GENDER",
+      payload: value,
+    });
+  }
+
   function reducer(state: SelectionContextValue, action: ActionReducerType) {
-    console.log("Called");
     switch (action.type) {
       case "NEW_LOCATION":
         return { ...state, location: action.payload };
@@ -59,6 +85,9 @@ function SelectionProvider({ children }: ProviderProps) {
     gender: state.gender,
     date: state.date,
     setCooordinates,
+    setLocation,
+    setDate,
+    setGender,
   };
 
   return (
