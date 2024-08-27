@@ -57,9 +57,6 @@ function Start() {
   }
 
   function handleParamSelection() {
-    console.log(coordinates);
-    console.log(gender);
-    console.log(date);
     if (!coordinates || gender === null || !date) {
       toast("Please select all parameters: location, gender and date");
     } else {

@@ -49,8 +49,8 @@ function LocationSearch({ position }: LocationSearchProps) {
     if (value !== null) {
       setSaveLocation(true);
       const newCoordinates = {
-        lat: value.geometry.coordinates[0],
-        lng: value.geometry.coordinates[1],
+        lat: value.geometry.coordinates[1],
+        lng: value.geometry.coordinates[0],
       };
       setCooordinates(newCoordinates);
       setLocation(

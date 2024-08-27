@@ -18,7 +18,7 @@ export async function getLocation(
   }
 }
 
-function saveToLocalStorage(name: string, value: any) {
+function saveToLocalStorage(name: string, value: Coordinates | string) {
   localStorage.setItem(name, JSON.stringify(value));
 }
 
