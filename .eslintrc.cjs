@@ -14,7 +14,7 @@ module.exports = {
   rules: {
     //"react/react-in-jsx-scope": 0,
     "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-explicit-any": "off",
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },
