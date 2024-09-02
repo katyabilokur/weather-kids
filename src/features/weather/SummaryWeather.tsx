@@ -79,13 +79,14 @@ function SummaryWeather({
       </Heading>
       <StyledRow>
         <StyledTermIcon />
-        <StyledInfoBlock>
-          <p>{maxTemperatureInRange} &deg;C</p>
-          <p>MAX</p>
-        </StyledInfoBlock>
+
         <StyledInfoBlock>
           <p>{minTemperatureInRange} &deg;C</p>
           <p>MIN</p>
+        </StyledInfoBlock>
+        <StyledInfoBlock>
+          <p>{maxTemperatureInRange} &deg;C</p>
+          <p>MAX</p>
         </StyledInfoBlock>
       </StyledRow>
       <StyledRow>
