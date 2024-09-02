@@ -45,8 +45,9 @@ function SummaryWeather({
   weatherData,
   dayPartSelection,
 }: SummaryWeatherProps) {
-  console.log(weatherData);
-  console.log(dayPartSelection);
+  // console.log(weatherData);
+  // console.log(dayPartSelection);
+
   const range = timeRanges.find((range) => range.text === dayPartSelection);
   const temperatres = weatherData.hourly.temperature_2m.slice(
     range.start,
