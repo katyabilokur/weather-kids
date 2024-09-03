@@ -1,17 +1,18 @@
 import { styled } from "styled-components";
 
 const StyledFooter = styled.footer`
-  background-color: var(--color-grey-300);
+  background-color: var(--color-main-text-dark);
   padding: 2.4rem 4.8rem;
-  border-top: 1px solid var(--color-grey-500);
-  color: var(--color-grey-500);
+  border-top: 1px solid var(--color-green);
+  color: var(--color-green-light);
+  font-weight: 200;
 
   display: flex;
   gap: 2.4rem;
   align-items: flex-end;
   justify-content: flex-start;
 
-  min-height: 16rem;
+  min-height: 12rem;
 `;
 
 function Footer() {

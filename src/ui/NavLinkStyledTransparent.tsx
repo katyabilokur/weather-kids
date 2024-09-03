@@ -3,9 +3,11 @@ import { NavLink } from "react-router-dom";
 
 interface Props {
   $color: string;
+  $border: string;
+  $colorHover: string;
 }
 
-const NavLinkStyled = styled(NavLink)<Props>`
+const NavLinkStyledTransparent = styled(NavLink)<Props>`
   &:link,
   &:visited {
     width: 20rem;
@@ -13,13 +15,13 @@ const NavLinkStyled = styled(NavLink)<Props>`
     align-items: center;
     justify-content: center;
 
-    color: var(--color-main-text-dark);
+    color: var(${(props) => props.$border});
     background-color: var(${(props) => props.$color});
-    border: 1px solid var(${(props) => props.$color});
+    border: 1px solid var(${(props) => props.$border});
     border-radius: var(--border-radius-lg);
 
     font-size: 2.2rem;
-    font-weight: 500;
+    font-weight: 300;
 
     text-decoration: none;
     cursor: pointer;
@@ -35,7 +37,9 @@ const NavLinkStyled = styled(NavLink)<Props>`
   &.active:link,
   &.active:visited {
     border-radius: var(--border-radius-hg);
+    color: var(${(props) => props.$colorHover});
+    border: 1px solid var(${(props) => props.$colorHover});
   }
 `;
 
-export default NavLinkStyled;
+export default NavLinkStyledTransparent;

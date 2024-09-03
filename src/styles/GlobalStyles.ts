@@ -15,6 +15,28 @@ const GlobalStyles = createGlobalStyle`
   --color-grey-800: #27272a;
   --color-grey-900: #18181b;
 
+  /* New colours */
+  --color-dark-base: #0b252b;
+  
+
+  --color-main-text-dark: #001E2B;
+  --color-main-text: #4a5358;
+
+  --color-green: #00ed70;
+  /* --color-green-light: #d7fce7; */
+  --color-green-light: #b2f9d1;
+  --color-green-dark: #115d4e;
+  //--color-green-super-dark: #082e26;
+  --color-green-super-dark: #183b34;
+
+  --color-pink: #bb3ff4;
+  /* --color-pink-light: #f9ecff; */
+  --color-pink-light: #ecc9fc;
+  --color-pink-dark: #674298;
+
+  /* New colours */
+
+
 --color-purple-main: #7A0062;
 --color-purple-main-light: #f0dfe6;
 --color-magenta-main: #F50062;
@@ -49,7 +71,8 @@ const GlobalStyles = createGlobalStyle`
   --border-radius-tiny: 3px;
   --border-radius-sm: 5px;
   --border-radius-md: 7px;
-  --border-radius-lg: 9px;
+  --border-radius-lg: 16px;
+  --border-radius-hg: 30px;
   --border-none: none;
 
   --size-laptop: "1024px";
@@ -67,6 +90,7 @@ const GlobalStyles = createGlobalStyle`
 
 html {
   font-size: 62.5%;
+  letter-spacing: 0.5px;
 }
 
 body {
