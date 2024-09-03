@@ -25,9 +25,7 @@ function Cloth({ weatherData, dayPartSelection }: ClothProps) {
     range.start,
     range.end
   );
-
-  const minTemp = Math.min(...temperatres);
-  const maxTemp = Math.max(...temperatres);
+  const averageTemp = (Math.min(...temperatres) + Math.max(...temperatres)) / 2;
 
   const precipitation =
     weatherData.daily.precipitation_probability_max[0] === 0
@@ -43,12 +41,12 @@ function Cloth({ weatherData, dayPartSelection }: ClothProps) {
   const { isLoading, clothData } = useCloth(gender);
   const filteredClothData = clothData?.filter(
     (cloth) =>
-      cloth.tempStart <= minTemp &&
-      cloth.tempEnd >= maxTemp &&
+      cloth.tempStart <= averageTemp &&
+      cloth.tempEnd >= averageTemp &&
       cloth.rain === rain
   );
 
-  console.log(`min: ${minTemp}, max: ${maxTemp}`);
+  console.log(`avTemp: ${averageTemp}`);
   console.log(filteredClothData);
 
   return (
