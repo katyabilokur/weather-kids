@@ -36,8 +36,8 @@ function DateSelectionPanel({ onDateSelect }: DateSelectionProps) {
         onClick={() => handleDateSelection("today")}
         $size="large"
         $color="--color-grey-50"
-        $border="--border-magenta"
-        $colorHover="--color-magenta-main-light"
+        $border="--border-dark-green"
+        $colorHover="--color-green-light-pale"
       >
         Today
       </Button>
@@ -46,8 +46,8 @@ function DateSelectionPanel({ onDateSelect }: DateSelectionProps) {
         onClick={() => handleDateSelection("tomorrow")}
         $size="large"
         $color="--color-grey-50"
-        $border="--border-magenta"
-        $colorHover="--color-purple-main-light"
+        $border="--border-dark-green"
+        $colorHover="--color-green-light-pale"
       >
         Tomorrow
       </Button>

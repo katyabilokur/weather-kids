@@ -9,9 +9,10 @@ function GoBack({ children }) {
       <Button
         onClick={() => navigate("/")}
         $size="large"
-        $color="--color-green-main"
-        $border="--border-none"
-        $colorHover="--color-green-main-dark"
+        $color="--color-green"
+        $border="--border-main"
+        $colorHover="--color-green"
+        $hoverBorderRadius="--border-radius-hg"
       >
         {children}
       </Button>

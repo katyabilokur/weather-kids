@@ -9,15 +9,15 @@ const StyledGenderSelectionPanel = styled.div`
 `;
 
 const StyledManIcon = styled(TbMan)`
-  color: var(--color-blue-main);
-  height: 12rem;
-  width: 12rem;
+  color: var(--color-green);
+  height: 8rem;
+  width: 8rem;
 `;
 
 const StyledWomanIcon = styled(TbWoman)`
-  color: var(--color-orange-main);
-  height: 12rem;
-  width: 12rem;
+  color: var(--color-pink);
+  height: 8rem;
+  width: 8rem;
 `;
 
 interface GenderSelectionProps {
@@ -36,8 +36,9 @@ function GenderSelectionPanel({ onGenderSelection }: GenderSelectionProps) {
         }}
         $size="huge"
         $color="--color-grey-50"
-        $border="--border-blue"
-        $colorHover="--color-blue-main-light"
+        $border="--border-green"
+        $colorHover="--color-green-extra-light"
+        $hoverBorderRadius="--border-radius-lg"
       >
         <StyledManIcon />
       </Button>
@@ -49,8 +50,9 @@ function GenderSelectionPanel({ onGenderSelection }: GenderSelectionProps) {
         }}
         $size="huge"
         $color="--color-grey-50"
-        $border="--border-orange"
-        $colorHover="--color-orange-main-light"
+        $border="--border-pink"
+        $colorHover="--color-pink-light"
+        $hoverBorderRadius="--border-radius-lg"
       >
         <StyledWomanIcon />
       </Button>

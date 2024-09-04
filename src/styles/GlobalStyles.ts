@@ -17,16 +17,18 @@ const GlobalStyles = createGlobalStyle`
 
   /* New colours */
   --color-dark-base: #0b252b;
+  --color-light-base: #F5F7FA;
   
 
   --color-main-text-dark: #001E2B;
   --color-main-text: #4a5358;
 
+  //#d5e000
   --color-green: #00ed70;
-  /* --color-green-light: #d7fce7; */
+  --color-green-extra-light: #d7fce7;
   --color-green-light: #b2f9d1;
   --color-green-dark: #115d4e;
-  //--color-green-super-dark: #082e26;
+  --color-green-light-pale: #cae8e4;
   --color-green-super-dark: #183b34;
 
   --color-pink: #bb3ff4;
@@ -34,7 +36,12 @@ const GlobalStyles = createGlobalStyle`
   --color-pink-light: #ecc9fc;
   --color-pink-dark: #674298;
 
+  --color-yellow: #fdef2d;
+
   /* New colours */
+
+  --box-shadow-md: 0px 7px 13px rgb(0 0 0 / 13%);
+
 
 
 --color-purple-main: #7A0062;
@@ -63,6 +70,11 @@ const GlobalStyles = createGlobalStyle`
   --border-blue: 2px solid var(--color-blue-main);
   --border-orange: 2px solid var(--color-orange-main);
 
+  --border-dark-green: 1px solid var( --color-green-dark);
+  --border-green: 1px solid var(--color-green);
+  --border-pink: 1px solid var(--color-pink);
+  --border-main: 1px solid var(--color-dark-base);
+
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
@@ -73,6 +85,7 @@ const GlobalStyles = createGlobalStyle`
   --border-radius-md: 7px;
   --border-radius-lg: 16px;
   --border-radius-hg: 30px;
+  --border-radius-mg: 40px;
   --border-none: none;
 
   --size-laptop: "1024px";
@@ -167,12 +180,15 @@ svg {
 }
 
 .selected {
-    background-color: var(--color-yellow-main-light);
+    background-color: var(--color-green-light-pale);
   }
 
-  .selected-man,
+  .selected-man {
+    background-color: var(--color-green-extra-light);
+  }
+
   .selected-woman {
-    background-color: var(--color-yellow-main-light);
+    background-color: var(--color-pink-light);
   }
 `;
 

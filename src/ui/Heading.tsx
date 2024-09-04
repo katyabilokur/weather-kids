@@ -22,9 +22,10 @@ const Heading = styled.h1`
   ${(props) =>
     props.as === "h3" &&
     css`
+      font-family: "Lora", serif;
       font-size: 2.4rem;
       font-weight: 500;
-      color: var(--color-pink-light);
+      color: var(--color-dark-base);
     `}
 
   ${(props) =>

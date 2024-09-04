@@ -22,7 +22,7 @@ const StyledInfoBlock = styled.div`
 `;
 
 const baseIconStyles = `
-  color: var(--color-blue-main);
+  color: var(--color-pink);
   height: 6rem;
   width: 6rem;
 `;

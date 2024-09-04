@@ -1,11 +1,16 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header";
 
 import styled from "styled-components";
 import Footer from "./Footer";
 
 const Main = styled.main`
-  background-color: var(--color-dark-base);
+  background-color: var(
+    ${() =>
+      useLocation().pathname === "/home"
+        ? "--color-dark-base"
+        : "--color-grey-0"}
+  );
   padding: 4rem 4.8rem 6.4rem;
   //overflow: hidden;
   /* margin: 0 auto; */

@@ -83,17 +83,18 @@ function LocationSearch({ position }: LocationSearchProps) {
           disabled={!saveLocation}
           onClick={handleSaveLocation}
           $size="small"
-          $color="--color-yellow-main"
+          $color="--color-green-light"
           $border="--border-none"
-          $colorHover="--color-yellow-main-dark"
+          $colorHover="--color-green"
+          $hoverBorderRadius="--border-radius-hg"
         >
           Save
         </Button>
       </StyledSearchContainer>
-      {location && <Heading as="h4">How to dress up in {location}</Heading>}
+      {/* {location && <Heading as="h4">How to dress up in {location}</Heading>}
       {!location && (
         <Heading as="h4">Please serach for a location first...</Heading>
-      )}
+      )} */}
     </>
   );
 }

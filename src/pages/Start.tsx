@@ -14,7 +14,28 @@ import GenderSelectionPanel from "../features/selection/GenderSelectionPanel";
 import LocationSearch from "../features/selection/LocationSearch";
 import { useSelection } from "../features/selection/SelectionContext";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 // import StyledLink from "../ui/StyledLink";
+
+const Container = styled.div`
+  background-color: var(--color-light-base);
+  border-radius: var(--border-radius-mg);
+  box-shadow: var(--box-shadow-md);
+  width: 80rem;
+  padding: 4rem 4rem 6rem 6rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+
+  p {
+    font-size: 2rem;
+    font-weight: 400;
+    align-self: flex-start;
+  }
+`;
 
 function Start() {
   const { position, getPosition } = useGeolocation();
@@ -66,15 +87,25 @@ function Start() {
 
   return (
     <>
-      <LocationSearch position={position} />
-      <GenderSelectionPanel onGenderSelection={handleGenderSelection} />
-      <DateSelectionPanel onDateSelect={handleDateSelection} />
+      <Container>
+        <p>1. Select your interested location</p>
+        <LocationSearch position={position} />
+      </Container>
+      <Container>
+        <p>2. Select the gender of a kid</p>
+        <GenderSelectionPanel onGenderSelection={handleGenderSelection} />
+      </Container>
+      <Container>
+        <p>3. Do you whant to check weather for today or tomorrow?</p>
+        <DateSelectionPanel onDateSelect={handleDateSelection} />
+      </Container>
       <Button
         onClick={handleParamSelection}
         $size="large"
-        $color="--color-green-main"
-        $border="--border-none"
-        $colorHover="--color-green-main-dark"
+        $color="--color-green"
+        $border="--border-main"
+        $colorHover="--color-green"
+        $hoverBorderRadius="--border-radius-hg"
       >
         Check it
       </Button>

@@ -1,10 +1,27 @@
+import { useLocation } from "react-router-dom";
 import { styled } from "styled-components";
 
 const StyledFooter = styled.footer`
-  background-color: var(--color-main-text-dark);
+  background-color: var(
+    ${() =>
+      useLocation().pathname === "/home"
+        ? "--color-main-text-dark"
+        : "--color-grey-0"}
+  );
   padding: 2.4rem 4.8rem;
-  border-top: 1px solid var(--color-green);
-  color: var(--color-green-light);
+  border-top: 1px solid
+    var(
+      ${() =>
+        useLocation().pathname === "/home"
+          ? "--color-green"
+          : "--color-dark-base"}
+    );
+  color: var(
+    ${() =>
+      useLocation().pathname === "/home"
+        ? "--color-green-light"
+        : "--color-green-dark"}
+  );
   font-weight: 200;
 
   display: flex;

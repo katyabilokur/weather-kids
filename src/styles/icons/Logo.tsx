@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import { styled } from "styled-components";
 
 const StyledLogoDiv = styled.div`
@@ -20,7 +21,12 @@ const StyledLogoDiv = styled.div`
   );
   height: 8rem;
   width: 8rem;
-  background: linear-gradient(-45deg, var(--color-green), var(--color-pink));
+  background: linear-gradient(
+    -45deg,
+    var(--color-green),
+    var(--color-yellow),
+    var(--color-pink)
+  );
   background-size: 300% 300%;
   animation: gradient 7s ease infinite;
 
@@ -28,7 +34,12 @@ const StyledLogoDiv = styled.div`
     height: 8rem;
     width: 8rem;
 
-    color: var(--color-main-text-dark);
+    color: var(
+      ${() =>
+        useLocation().pathname === "/home"
+          ? "--color-main-text-dark"
+          : "--color-grey-0"}
+    );
     font-weight: 500;
     font-size: 4rem;
 

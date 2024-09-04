@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import GlobalStyles from "../styles/GlobalStyles";
+import Heading from "./Heading";
+import Button from "./Button";
 
 const StyledErrorFallback = styled.main`
   height: 100vh;
@@ -11,22 +13,21 @@ const StyledErrorFallback = styled.main`
 `;
 
 const Box = styled.div`
-  /* Box */
+  width: 100rem;
   background-color: var(--color-grey-100);
   border: 1px solid var(--color-grey-200);
   border-radius: var(--border-radius-md);
 
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  justify-content: center;
+  align-items: center;
+
   padding: 4.8rem;
-  flex: 0 1 96rem;
-  text-align: center;
 
-  & h1 {
-    margin-bottom: 1.6rem;
-  }
-
-  & p {
-    font-family: "Sono";
-    margin-bottom: 3.2rem;
+  p {
+    margin-bottom: 2.4rem;
     color: var(--color-grey-600);
   }
 `;
@@ -43,9 +44,18 @@ function ErrorFallback({
       <GlobalStyles />
       <StyledErrorFallback>
         <Box>
-          <h1>Something went wrong</h1>
+          <Heading as="h2">Something went wrong</Heading>
           <p>{error.message}</p>
-          <button onClick={resetErrorBoundary}>Please try again</button>
+          <Button
+            onClick={resetErrorBoundary}
+            $size="large"
+            $color="--color-green"
+            $border="--border-main"
+            $colorHover="--color-green"
+            $hoverBorderRadius="--border-radius-hg"
+          >
+            Try again
+          </Button>
         </Box>
       </StyledErrorFallback>
     </>
