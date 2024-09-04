@@ -12,32 +12,12 @@ const StyledPageNotFound = styled.main`
   padding: 4.8rem;
 `;
 
-const Container = styled.div`
-  background-color: var(--color-light-base);
-  border-radius: var(--border-radius-mg);
-  box-shadow: var(--box-shadow-md);
-  width: 80rem;
-  padding: 4rem 4rem 6rem 6rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 4rem;
-
-  p {
-    font-size: 2rem;
-    font-weight: 400;
-    align-self: flex-start;
-  }
-`;
-
 function PageNotFound() {
   const moveBack = useMoveBack();
 
   return (
     <StyledPageNotFound>
-      <Container>
+      <div className="container-block">
         <p>Sorry, there is no page like this</p>
         <Button
           onClick={moveBack}
@@ -49,7 +29,7 @@ function PageNotFound() {
         >
           &larr; Go back
         </Button>
-      </Container>
+      </div>
     </StyledPageNotFound>
   );
 }

@@ -190,6 +190,26 @@ svg {
   .selected-woman {
     background-color: var(--color-pink-light);
   }
+
+  .container-block {
+    background-color: var(--color-light-base);
+  border-radius: var(--border-radius-mg);
+  box-shadow: var(--box-shadow-md);
+  width: 80rem;
+  padding: 4rem 4rem 6rem 6rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+
+  p {
+    font-size: 2rem;
+    font-weight: 400;
+    align-self: flex-start;
+  }
+  }
 `;
 
 export default GlobalStyles;

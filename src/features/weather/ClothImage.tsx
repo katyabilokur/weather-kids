@@ -2,8 +2,8 @@ import styled from "styled-components";
 import React from "react";
 
 const StyledClothImage = styled.div`
-  width: 18rem;
-  height: 18rem;
+  width: 15rem;
+  height: 15rem;
 
   display: flex;
   justify-content: center;
@@ -13,6 +13,7 @@ const StyledClothImage = styled.div`
     width: 15rem;
     height: 15rem;
     object-fit: cover;
+    border: var(--border-main);
     border-radius: var(--border-radius-lg);
   }
 `;

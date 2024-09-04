@@ -14,28 +14,6 @@ import GenderSelectionPanel from "../features/selection/GenderSelectionPanel";
 import LocationSearch from "../features/selection/LocationSearch";
 import { useSelection } from "../features/selection/SelectionContext";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-// import StyledLink from "../ui/StyledLink";
-
-const Container = styled.div`
-  background-color: var(--color-light-base);
-  border-radius: var(--border-radius-mg);
-  box-shadow: var(--box-shadow-md);
-  width: 80rem;
-  padding: 4rem 4rem 6rem 6rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 4rem;
-
-  p {
-    font-size: 2rem;
-    font-weight: 400;
-    align-self: flex-start;
-  }
-`;
 
 function Start() {
   const { position, getPosition } = useGeolocation();
@@ -87,18 +65,18 @@ function Start() {
 
   return (
     <>
-      <Container>
+      <div className="container-block">
         <p>1. Select your interested location</p>
         <LocationSearch position={position} />
-      </Container>
-      <Container>
+      </div>
+      <div className="container-block">
         <p>2. Select the gender of a kid</p>
         <GenderSelectionPanel onGenderSelection={handleGenderSelection} />
-      </Container>
-      <Container>
+      </div>
+      <div className="container-block">
         <p>3. Do you whant to check weather for today or tomorrow?</p>
         <DateSelectionPanel onDateSelect={handleDateSelection} />
-      </Container>
+      </div>
       <Button
         onClick={handleParamSelection}
         $size="large"
@@ -109,7 +87,6 @@ function Start() {
       >
         Check it
       </Button>
-      {/* <StyledLink to="/dressup">Check it</StyledLink> */}
     </>
   );
 }

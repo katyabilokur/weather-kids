@@ -20,7 +20,7 @@ const viewOptions = timeRanges.map((range) => range.text);
 function DayPartSelection({ children, onChange }: DayPartSelectionProps) {
   return (
     <StyledDayPartSelection>
-      <Heading as="h2">{children}</Heading>
+      <Heading as="h3">{children}</Heading>
       <Select options={viewOptions} onChange={onChange} />
     </StyledDayPartSelection>
   );

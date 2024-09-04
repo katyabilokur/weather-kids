@@ -2,7 +2,8 @@ import styled from "styled-components";
 import React from "react";
 import { PiThermometerHotLight, PiCloudRainLight } from "react-icons/pi";
 import { timeRanges } from "../../interfaces/constant";
-import Heading from "../../ui/Heading";
+import { useSelection } from "../selection/SelectionContext";
+import { format } from "date-fns";
 
 const StyledSummaryWeather = styled.div`
   display: flex;
@@ -45,8 +46,7 @@ function SummaryWeather({
   weatherData,
   dayPartSelection,
 }: SummaryWeatherProps) {
-  // console.log(weatherData);
-  // console.log(dayPartSelection);
+  const { date, location } = useSelection();
 
   const range = timeRanges.find((range) => range.text === dayPartSelection);
   const temperatres = weatherData.hourly.temperature_2m.slice(
@@ -67,16 +67,12 @@ function SummaryWeather({
           )
         );
 
-  //TODO: for design fix only
-  // const maxTemperatureInRange = 13.2;
-  // const minTemperatureInRange = 8.4;
-  // const precipitation = 13;
-
   return (
     <StyledSummaryWeather>
-      <Heading as="h3">
-        Information for {range.start}:00 - {range.end}:00
-      </Heading>
+      <p>
+        Information for {range.start}:00 - {range.end}:00 on{" "}
+        {format(date, "EEEE, dd MMMM")} in {location}
+      </p>
       <StyledRow>
         <StyledTermIcon />
 

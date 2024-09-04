@@ -39,14 +39,21 @@ function DressUp() {
           <p>Loading data...</p>
         ) : (
           <>
-            <DayPartSelection onChange={onChangeSelection}>
-              How to dress up for {"  "}
-            </DayPartSelection>
-            <SummaryWeather
-              weatherData={weatherData}
-              dayPartSelection={filterDayPart}
-            />
-            <Cloth weatherData={weatherData} dayPartSelection={filterDayPart} />
+            <div className="container-block">
+              <DayPartSelection onChange={onChangeSelection}>
+                How to dress up a {!gender ? "boy" : "girl"} for {"  "}
+              </DayPartSelection>
+              <SummaryWeather
+                weatherData={weatherData}
+                dayPartSelection={filterDayPart}
+              />
+            </div>
+            <div className="container-block">
+              <Cloth
+                weatherData={weatherData}
+                dayPartSelection={filterDayPart}
+              />
+            </div>
             <Button
               onClick={moveBack}
               $size="large"

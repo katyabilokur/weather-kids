@@ -19,7 +19,7 @@ const sizes: any = {
     padding: 1.2rem 4rem;
     font-weight: 500;
     width: 20rem;
-    color: var(--color-green-dark);
+    color: var(--color-dark-base);
   `,
   huge: css`
     font-size: 1.8rem;

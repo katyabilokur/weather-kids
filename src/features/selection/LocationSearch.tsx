@@ -91,10 +91,6 @@ function LocationSearch({ position }: LocationSearchProps) {
           Save
         </Button>
       </StyledSearchContainer>
-      {/* {location && <Heading as="h4">How to dress up in {location}</Heading>}
-      {!location && (
-        <Heading as="h4">Please serach for a location first...</Heading>
-      )} */}
     </>
   );
 }

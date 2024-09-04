@@ -43,7 +43,7 @@ function ErrorFallback({
     <>
       <GlobalStyles />
       <StyledErrorFallback>
-        <Box>
+        <div className="container-block">
           <Heading as="h2">Something went wrong</Heading>
           <p>{error.message}</p>
           <Button
@@ -56,7 +56,7 @@ function ErrorFallback({
           >
             Try again
           </Button>
-        </Box>
+        </div>
       </StyledErrorFallback>
     </>
   );

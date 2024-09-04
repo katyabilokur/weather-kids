@@ -8,6 +8,7 @@ import { timeRanges } from "../../interfaces/constant";
 const StyledCloth = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
 `;
 
 interface ClothProps {
@@ -45,9 +46,6 @@ function Cloth({ weatherData, dayPartSelection }: ClothProps) {
       cloth.tempEnd >= averageTemp &&
       cloth.rain === rain
   );
-
-  console.log(`avTemp: ${averageTemp}`);
-  console.log(filteredClothData);
 
   return (
     <StyledCloth>

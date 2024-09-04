@@ -2,9 +2,10 @@ import styled from "styled-components";
 import React from "react";
 
 const StyledSelect = styled.select`
-  font-size: 1.4rem;
-  padding: 0.8rem 1.2rem;
-  border: 1px solid;
+  font-size: 1%.6;
+  color: var(--color-dark-base);
+  padding: 0.8rem 2.4rem;
+  border: 1px solid var(--color-grey-300);
   border-radius: var(--border-radius-sm);
   background-color: var(--color-grey-0);
   font-weight: 500;
