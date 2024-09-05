@@ -36,7 +36,7 @@ const StyledLogoDiv = styled.div`
 
     color: var(
       ${() =>
-        useLocation().pathname === "/home"
+        useLocation().pathname === "/"
           ? "--color-main-text-dark"
           : "--color-grey-0"}
     );

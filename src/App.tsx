@@ -20,8 +20,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route element={<AppLayout />}>
-              <Route index element={<Navigate replace to="home" />} />
-              <Route path="home" element={<Home />} />
+              {/* <Route index element={<Navigate replace to="home" />} /> */}
+              <Route path="/" element={<Home />} />
               <Route path="start" element={<Start />} />
               <Route path="dressup" element={<DressUp />} />
               <Route path="signin" element={<Login />} />

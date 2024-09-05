@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 const StyledFooter = styled.footer`
   background-color: var(
     ${() =>
-      useLocation().pathname === "/home"
+      useLocation().pathname === "/"
         ? "--color-main-text-dark"
         : "--color-grey-0"}
   );
@@ -12,13 +12,11 @@ const StyledFooter = styled.footer`
   border-top: 1px solid
     var(
       ${() =>
-        useLocation().pathname === "/home"
-          ? "--color-green"
-          : "--color-dark-base"}
+        useLocation().pathname === "/" ? "--color-green" : "--color-dark-base"}
     );
   color: var(
     ${() =>
-      useLocation().pathname === "/home"
+      useLocation().pathname === "/"
         ? "--color-green-light"
         : "--color-green-dark"}
   );

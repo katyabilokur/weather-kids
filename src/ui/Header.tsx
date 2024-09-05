@@ -5,7 +5,7 @@ import Logo from "../styles/icons/Logo";
 const StyledHeader = styled.header`
   background-color: var(
     ${() =>
-      useLocation().pathname === "/home"
+      useLocation().pathname === "/"
         ? "--color-main-text-dark"
         : "--color-grey-0"}
   );
@@ -14,9 +14,7 @@ const StyledHeader = styled.header`
   border-bottom: 1px solid
     var(
       ${() =>
-        useLocation().pathname === "/home"
-          ? "--color-green"
-          : "--color-dark-base"}
+        useLocation().pathname === "/" ? "--color-green" : "--color-dark-base"}
     );
 
   display: flex;
@@ -28,7 +26,7 @@ function Header() {
   const navigate = useNavigate();
   return (
     <StyledHeader>
-      <Logo onClickHandler={() => navigate("/home")} />
+      <Logo onClickHandler={() => navigate("/")} />
     </StyledHeader>
   );
 }
