@@ -9,7 +9,7 @@ const StyledDateSelectionPanel = styled.div`
   gap: 8rem;
 
   @media ${devices.tablet} {
-    gap: 4rem;
+    gap: 3rem;
 
     button {
       width: 13rem;

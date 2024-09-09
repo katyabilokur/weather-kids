@@ -22,10 +22,6 @@ const StyledSearchContainer = styled.div`
   display: flex;
   gap: 2rem;
 
-  @media ${devices.phone} {
-    gap: 1rem;
-  }
-
   input {
     @media ${devices.tablet} {
       min-width: 40rem;
@@ -33,8 +29,9 @@ const StyledSearchContainer = styled.div`
     }
 
     @media ${devices.phone} {
-      min-width: 25rem;
-      width: auto;
+      min-width: 20rem;
+      width: 60vw;
+      max-width: 32rem;
     }
   }
 `;
