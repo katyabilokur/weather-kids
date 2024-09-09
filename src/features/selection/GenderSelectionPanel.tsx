@@ -2,22 +2,40 @@ import styled from "styled-components";
 import { TbWoman, TbMan } from "react-icons/tb";
 import Button from "../../ui/Button";
 import { useState } from "react";
+import { devices } from "../../interfaces/constant";
 
 const StyledGenderSelectionPanel = styled.div`
   display: flex;
   gap: 8rem;
+
+  @media ${devices.phone} {
+    gap: 3rem;
+  }
+`;
+
+const IconSize = `
+  height: 8rem;
+  width: 8rem;
+
+  @media ${devices.tablet} {
+    height: 6rem;
+    width: 6rem;
+  }
+
+    @media ${devices.phone} {
+    height: 5rem;
+    width: 5rem;
+  }
 `;
 
 const StyledManIcon = styled(TbMan)`
   color: var(--color-green);
-  height: 8rem;
-  width: 8rem;
+  ${IconSize};
 `;
 
 const StyledWomanIcon = styled(TbWoman)`
   color: var(--color-pink);
-  height: 8rem;
-  width: 8rem;
+  ${IconSize};
 `;
 
 interface GenderSelectionProps {

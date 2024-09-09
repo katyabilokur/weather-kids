@@ -1,13 +1,20 @@
 import styled from "styled-components";
 import React from "react";
 import Select from "../../ui/Select";
-import { timeRanges } from "../../interfaces/constant";
+import { devices, timeRanges } from "../../interfaces/constant";
 import Heading from "../../ui/Heading";
 
 const StyledDayPartSelection = styled.div`
   display: flex;
   gap: 2rem;
   align-items: flex-end;
+
+  @media ${devices.phone} {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
 `;
 
 interface DayPartSelectionProps {

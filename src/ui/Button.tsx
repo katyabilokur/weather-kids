@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { devices } from "../interfaces/constant";
 
 const sizes: any = {
   small: css`
@@ -8,6 +9,20 @@ const sizes: any = {
     text-transform: uppercase;
     font-weight: 600;
     text-align: center;
+
+    @media ${devices.tablet} {
+      width: 7rem;
+      padding: 0.4rem 0.8rem;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    @media ${devices.phone} {
+      width: 5rem;
+      padding: 0.2rem 0.4rem;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
   `,
   medium: css`
     font-size: 1.4rem;
@@ -20,11 +35,26 @@ const sizes: any = {
     font-weight: 500;
     width: 20rem;
     color: var(--color-dark-base);
+
+    @media ${devices.tablet} {
+      font-weight: 400;
+      padding: 1rem 2rem;
+      width: 16rem;
+    }
   `,
   huge: css`
+    width: 20rem;
     font-size: 1.8rem;
     padding: 2rem 1rem;
     font-weight: 400;
+
+    @media ${devices.tablet} {
+      width: 16rem;
+    }
+
+    @media ${devices.phone} {
+      width: 12rem;
+    }
   `,
 };
 
@@ -37,7 +67,6 @@ interface Props {
 }
 
 const Button = styled.button<Props>`
-  width: 20rem;
   display: flex;
   align-items: center;
   justify-content: center;

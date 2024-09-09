@@ -16,10 +16,27 @@ import {
 import Coordinates from "../../interfaces/Coordinates";
 import { toast } from "react-hot-toast";
 import { useSelection } from "./SelectionContext";
+import { devices } from "../../interfaces/constant";
 
 const StyledSearchContainer = styled.div`
   display: flex;
   gap: 2rem;
+
+  @media ${devices.phone} {
+    gap: 1rem;
+  }
+
+  input {
+    @media ${devices.tablet} {
+      min-width: 40rem;
+      width: auto;
+    }
+
+    @media ${devices.phone} {
+      min-width: 25rem;
+      width: auto;
+    }
+  }
 `;
 
 interface LocationSearchProps {

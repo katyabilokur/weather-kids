@@ -3,12 +3,17 @@ import React from "react";
 import { useCloth } from "../../hooks/useCloth";
 import { useSelection } from "../selection/SelectionContext";
 import ClothImage from "./ClothImage";
-import { timeRanges } from "../../interfaces/constant";
+import { devices, timeRanges } from "../../interfaces/constant";
 
 const StyledCloth = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
+
+  @media ${devices.phone} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 `;
 
 interface ClothProps {

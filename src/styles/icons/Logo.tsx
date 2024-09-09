@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { styled } from "styled-components";
+import { devices } from "../../interfaces/constant";
 
 const StyledLogoDiv = styled.div`
   clip-path: polygon(
@@ -30,6 +31,11 @@ const StyledLogoDiv = styled.div`
   background-size: 300% 300%;
   animation: gradient 7s ease infinite;
 
+  @media ${devices.tablet} {
+    height: 6rem;
+    width: 6rem;
+  }
+
   div {
     height: 8rem;
     width: 8rem;
@@ -46,6 +52,12 @@ const StyledLogoDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media ${devices.tablet} {
+      height: 6rem;
+      width: 6rem;
+      font-size: 3rem;
+    }
   }
 
   :hover {

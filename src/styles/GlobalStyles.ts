@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { devices } from "../interfaces/constant";
 
 const GlobalStyles = createGlobalStyle`
 
@@ -42,34 +43,6 @@ const GlobalStyles = createGlobalStyle`
 
   --box-shadow-md: 0px 7px 13px rgb(0 0 0 / 13%);
 
-
-
---color-purple-main: #7A0062;
---color-purple-main-light: #f0dfe6;
---color-magenta-main: #F50062;
---color-magenta-main-light: #faf0f4;
-
---color-orange-main: #FFA033;
---color-orange-main-light:#ffe8cf;
---color-yellow-main: #FFE15C;
---color-yellow-main-light: #ffed9e;
---color-yellow-main-dark: #fad014;
---color-green-main: #d5e000;
---color-green-main-dark: #C2CC0f;
---color-green-main-light: #f9fad9;
---color-blue-main: #1AC8ED; //00B9E8
---color-blue-main-light: #ccf6ff;
---color-blue-main-dark:#0d8fab;
-
-  --color-red-light: #FFDCD8;
-  --color-red-medium: #FE6F5E;
-  --color-red-dark: #E02F1C;
-
-  --border-purple: 2px solid var(--color-purple-main);
-  --border-magenta: 2px solid var(--color-magenta-main);
-  --border-blue: 2px solid var(--color-blue-main);
-  --border-orange: 2px solid var(--color-orange-main);
-
   --border-dark-green: 1px solid var( --color-green-dark);
   --border-green: 1px solid var(--color-green);
   --border-pink: 1px solid var(--color-pink);
@@ -80,7 +53,6 @@ const GlobalStyles = createGlobalStyle`
   --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
 
-  --border-radius-tiny: 3px;
   --border-radius-sm: 5px;
   --border-radius-md: 7px;
   --border-radius-lg: 16px;
@@ -88,9 +60,6 @@ const GlobalStyles = createGlobalStyle`
   --border-radius-mg: 40px;
   --border-none: none;
 
-  --size-laptop: "1024px";
-  --size-desctop: "2560px";
-  --size-tablet: "768px";
 }
 
 *,
@@ -114,6 +83,10 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
+
+  @media ${devices.tablet} {
+    font-size: 1.4rem;
+  }
 }
 
 input,
@@ -208,6 +181,28 @@ svg {
     font-size: 2rem;
     font-weight: 400;
     align-self: flex-start;
+  }
+
+  @media ${devices.tablet} {
+    width: 95%;
+    min-width: 60rem;
+    padding: 3rem 3rem 5rem 5rem;
+
+    p {
+    font-size: 1.8rem;
+  }
+  }
+
+  @media ${devices.phone} {
+    gap: 3rem;
+    width: 95%;
+    min-width: 32rem;
+    padding: 3rem 2.2rem 3rem 2.2rem;
+    border-radius: var(--border-radius-hg);
+
+    p {
+    font-size: 1.6rem;
+  }
   }
   }
 `;

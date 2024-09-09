@@ -2,10 +2,20 @@ import styled from "styled-components";
 import Button from "../../ui/Button";
 import { addDays, setHours, setMinutes, setSeconds } from "date-fns";
 import { useState } from "react";
+import { devices } from "../../interfaces/constant";
 
 const StyledDateSelectionPanel = styled.div`
   display: flex;
   gap: 8rem;
+
+  @media ${devices.tablet} {
+    gap: 4rem;
+
+    button {
+      width: 13rem;
+      font-size: 1.6rem;
+    }
+  }
 `;
 
 interface DateSelectionProps {

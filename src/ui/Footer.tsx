@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { styled } from "styled-components";
+import { devices } from "../interfaces/constant";
 
 const StyledFooter = styled.footer`
   background-color: var(
@@ -28,6 +29,16 @@ const StyledFooter = styled.footer`
   justify-content: flex-start;
 
   min-height: 12rem;
+
+  @media ${devices.tablet} {
+    min-height: 8rem;
+    padding: 2rem 3.6rem;
+  }
+
+  @media ${devices.phone} {
+    min-height: 7rem;
+    padding: 2rem;
+  }
 `;
 
 function Footer() {
