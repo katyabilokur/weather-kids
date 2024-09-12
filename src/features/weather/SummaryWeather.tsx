@@ -61,7 +61,7 @@ function SummaryWeather({
     weatherData.daily.precipitation_probability_max[0] === 0
       ? 0
       : Math.max(
-          weatherData.hourly.precipitation_probability.slice(
+          ...weatherData.hourly.precipitation_probability.slice(
             range.start,
             range.end
           )

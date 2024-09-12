@@ -37,7 +37,7 @@ function Cloth({ weatherData, dayPartSelection }: ClothProps) {
     weatherData.daily.precipitation_probability_max[0] === 0
       ? 0
       : Math.max(
-          weatherData.hourly.precipitation_probability.slice(
+          ...weatherData.hourly.precipitation_probability.slice(
             range.start,
             range.end
           )
@@ -49,8 +49,13 @@ function Cloth({ weatherData, dayPartSelection }: ClothProps) {
     (cloth) =>
       cloth.tempStart <= averageTemp &&
       cloth.tempEnd >= averageTemp &&
-      cloth.rain === rain
+      !cloth.rain
   );
+
+  if (rain) {
+    const rainCloth = clothData?.filter((cloth) => cloth.rain === rain);
+    filteredClothData?.push(...rainCloth);
+  }
 
   return (
     <StyledCloth>
