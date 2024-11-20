@@ -9,6 +9,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import { SelectionProvider } from "./features/selection/SelectionContext";
 import Login from "./pages/Login";
+import Ping from "./pages/Ping";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ function App() {
               <Route path="start" element={<Start />} />
               <Route path="dressup" element={<DressUp />} />
               <Route path="signin" element={<Login />} />
+              <Route path="ping" element={<Ping />} />
             </Route>
             <Route path="*" element={<PageNotFound />} />
           </Routes>
